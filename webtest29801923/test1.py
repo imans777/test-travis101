@@ -10,9 +10,9 @@ db = sqlite3.connect(
     check_same_thread=False,
     isolation_level=None
 )
-db.cursor().execute('''CREATE TABLE IF NOT EXISTS TestTable(name TEXT) ''')
-db.cursor().execute('''INSERT INTO )TestTable(name) VALUES ('iman')''')
-db.cursor().execute('''SELECT name FROM TestTable''')
+db.cursor().execute(''' CREATE TABLE IF NOT EXISTS TestTable(name TEXT) ''')
+db.cursor().execute(''' INSERT INTO TestTable(name) VALUES ('iman') ''')
+db.cursor().execute(''' SELECT name FROM TestTable ''')
 print('this is the selected test table: ', db.cursor.fetchall())
 
 
