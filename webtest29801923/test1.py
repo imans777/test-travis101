@@ -1,4 +1,19 @@
 from unittest import TestCase
+import sqlite3
+import os
+from flask import Response
+db = sqlite3.connect(
+    os.path.join(
+        os.path.dirname(__file__),
+        '.'.join(['database', 'db'])
+    ),
+    check_same_thread=False,
+    isolation_level=None
+)
+db.cursor().execute(''' CREATE TABLE IF NOT EXISTS TestTable(name TEXT) ''')
+db.cursor().execute(''' INSERT INTO TestTable(name) VALUES ('iman') ''')
+db.cursor().execute(''' SELECT name FROM TestTable ''')
+print('this is the selected test table: ', db.cursor().fetchall())
 
 
 class f1(TestCase):

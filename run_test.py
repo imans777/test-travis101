@@ -22,8 +22,10 @@ if __name__ == '__main__':
 
     import sys
     if '-q' in sys.argv:
-        run_tests(0)
+        sts = run_tests(0)
     elif '-v' in sys.argv:
-        run_tests(2)
+        sts = run_tests(2)
     else:
-        run_tests(1)
+        sts = run_tests(1)
+
+    sys.exit(sts)
