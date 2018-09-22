@@ -1,4 +1,6 @@
 from unittest import TestCase
+import sqlite3
+from flask import Response
 
 
 class f1(TestCase):
