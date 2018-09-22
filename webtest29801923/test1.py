@@ -1,10 +1,11 @@
 from unittest import TestCase
 import sqlite3
+import os
 from flask import Response
 db = sqlite3.connect(
     os.path.join(
         os.path.dirname(__file__),
-        '.'.join([db_name, 'db'])
+        '.'.join(['database', 'db'])
     ),
     check_same_thread=False,
     isolation_level=None
